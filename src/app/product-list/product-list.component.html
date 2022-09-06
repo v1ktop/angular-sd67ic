@@ -14,6 +14,7 @@ https://angular.io/guide/structural-directives
     <a
       [title]="product.name + ' details'"
       [ngClass]="{ 'first-class': isFirst }"
+      [routerLink]="['/products', product.id]"
     >
       {{ product.name }}
     </a>
