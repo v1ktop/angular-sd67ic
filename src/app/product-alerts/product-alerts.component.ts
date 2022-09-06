@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from '../products';
 
 @Component({
@@ -11,6 +11,9 @@ export class ProductAlertsComponent implements OnInit {
 
   //Indicates that the property value passes in from the component's parent
   @Input() product!: Product;
+
+  //allows the ProductAlertsComponent to emit an event when the value of the notify property changes
+  @Output() notifyDialog = new EventEmitter();
 
   ngOnInit(): void {}
 }
