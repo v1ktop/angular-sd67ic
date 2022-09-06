@@ -1,9 +1,17 @@
+export enum Category {
+  All = 0,
+  HighResolution = 1,
+  SmallDisplay = 2,
+  HighQuality = 3,
+}
+
 export interface Product {
   id: number;
   name: string;
   price: number;
   description: string;
   stock: number;
+  category: Category;
 }
 
 export const products = [
@@ -13,6 +21,7 @@ export const products = [
     price: 799,
     description: 'A large phone with one of the best screens',
     stock: 1,
+    category: Category.HighResolution,
   },
   {
     id: 2,
@@ -20,6 +29,7 @@ export const products = [
     price: 699,
     description: 'A great phone with one of the best cameras',
     stock: 1,
+    category: Category.SmallDisplay,
   },
   {
     id: 3,
@@ -27,6 +37,7 @@ export const products = [
     price: 299,
     description: '',
     stock: 1,
+    category: Category.All,
   },
   {
     id: 4,
@@ -34,6 +45,7 @@ export const products = [
     price: 900,
     description: '',
     stock: 0,
+    category: Category.HighResolution,
   },
 ];
 

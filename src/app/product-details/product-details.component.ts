@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product, products } from '../products';
+import { Category } from '../products';
 
 @Component({
   selector: 'app-product-details',
@@ -9,6 +10,7 @@ import { Product, products } from '../products';
 })
 export class ProductDetailsComponent implements OnInit {
   product: Product | undefined;
+  readonly category = Category;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {

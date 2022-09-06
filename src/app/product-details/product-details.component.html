@@ -4,4 +4,22 @@
   <h3>{{ product.name }}</h3>
   <h4>{{ product.price | currency }}</h4>
   <p>{{ product.description }}</p>
+
+  <ng-container [ngSwitch]="product.category">
+    <ng-container *ngSwitchCase="category.All">
+      <p>No category</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="category.HighResolution">
+      <p>High Resolution Display</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="category.SmallDisplay">
+      <p>Small Display</p>
+    </ng-container>
+    <ng-container *ngSwitchCase="category.HighQuality">
+      <p>High Quality product</p>
+    </ng-container>
+    <ng-container *ngSwitchDefault="category.Al">
+      <p>No category</p>
+    </ng-container>
+  </ng-container>
 </div>
