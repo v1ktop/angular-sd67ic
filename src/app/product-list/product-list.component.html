@@ -8,10 +8,13 @@ can be found in the LICENSE file at https://angular.io/license
 https://angular.io/guide/structural-directives
 -->
 <!--Estructural directive-->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; first as isFirst">
   <h3>
     <!--Property binding-->
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [ngClass]="{ 'first-class': isFirst }"
+    >
       {{ product.name }}
     </a>
   </h3>
@@ -27,5 +30,5 @@ https://angular.io/guide/structural-directives
 </div>
 
 <ng-template #elseBlock>
-  <p>No description available</p>
+  <p [ngStyle]="{ 'font-style': 'oblique' }">No description available</p>
 </ng-template>
