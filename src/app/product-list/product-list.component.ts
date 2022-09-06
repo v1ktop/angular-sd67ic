@@ -9,6 +9,7 @@ import { products } from '../products';
 })
 export class ProductListComponent {
   products = products;
+  shadowValues = '1px 1px 1px aqua';
 
   share() {
     window.alert('The product has been shared!');

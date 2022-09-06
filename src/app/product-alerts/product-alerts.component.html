@@ -1,3 +1,5 @@
 <p *ngIf="product && product.price > 700">
-  <button type="button" (click)="notifyDialog.emit()">Notify Me</button>
+  <button [ngStyle]="currentStyles()" type="button" (click)="notifyDialog.emit()">
+    Notify Me
+  </button>
 </p>

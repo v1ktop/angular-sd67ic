@@ -8,7 +8,6 @@ import { Product } from '../products';
 })
 export class ProductAlertsComponent implements OnInit {
   constructor() {}
-
   //Indicates that the property value passes in from the component's parent
   @Input() product!: Product;
 
@@ -16,4 +15,13 @@ export class ProductAlertsComponent implements OnInit {
   @Output() notifyDialog = new EventEmitter();
 
   ngOnInit(): void {}
+
+  currentStyles ()
+  {
+    return {
+      'font-style': this.product.stock ? 'bold' : 'normal',
+      'color' : this.product.stock ? 'white' : 'red',
+      'font-size': this.product.stock ? '14px' : '10px',
+    };
+  }
 }
