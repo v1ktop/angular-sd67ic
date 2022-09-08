@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild, ViewChild } from '@angular/core';
+import { ProductInfoComponent } from '../product-info/product-info.component';
 
 import { products } from '../products';
 
@@ -10,9 +11,10 @@ import { products } from '../products';
 export class ProductListComponent {
   products = products;
   shadowValues = '1px 1px 1px aqua';
+  @ViewChild(ProductInfoComponent) productInfo!: ProductInfoComponent;
 
   share() {
-    window.alert('The product has been shared!');
+    this.productInfo.share("The product has been shared");
   }
 
   onNotify() {

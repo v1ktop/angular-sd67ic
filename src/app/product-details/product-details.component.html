@@ -1,9 +1,7 @@
 <h2>Product Details</h2>
 
 <div *ngIf="product">
-  <h3 appHighlight>{{ product.name }}</h3>
-  <h4>{{ product.price | currency }}</h4>
-  <p>{{ product.description }}</p>
+  <app-product-info [product]="product"> </app-product-info>
 
   <ng-container [ngSwitch]="product.category">
     <ng-container *ngSwitchCase="category.All">

@@ -9,6 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { HighlightDirective } from './highlight.directive';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { HighlightDirective } from './highlight.directive';
     ProductAlertsComponent,
     ProductDetailsComponent,
     HighlightDirective,
+    ProductInfoComponent,
   ],
   bootstrap: [AppComponent],
 })

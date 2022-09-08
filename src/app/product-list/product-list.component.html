@@ -8,28 +8,11 @@ https://angular.io/guide/structural-directives
 <h2 [ngStyle]="{ 'text-shadow': shadowValues }">Products</h2>
 
 <!--Estructural directive-->
-<div *ngFor="let product of products; first as isFirst">
-  <h3>
-    <!--Property binding-->
-    <a
-      [title]="product.name + ' details'"
-      [ngClass]="{ 'first-class': isFirst }"
-      [routerLink]="['/products', product.id]"
-    >
-      {{ product.name }}
-    </a>
-  </h3>
+<div *ngFor="let product of products">
+  <app-product-info [product]="product"> </app-product-info>
 
-  <!--Estructural directive-->
-  <p *ngIf="product.description; else elseBlock">
-    Description: {{ product.description }}
-  </p>
   <button type="button" (click)="share()">Share</button>
 
   <app-product-alerts [product]="product" (notifyDialog)="onNotify()">
   </app-product-alerts>
 </div>
-
-<ng-template #elseBlock>
-  <p style="{ 'font-style': 'oblique' }">No description available</p>
-</ng-template>
